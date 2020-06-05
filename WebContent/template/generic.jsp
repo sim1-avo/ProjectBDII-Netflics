@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Road Trip by TEMPLATED</title>
+		<title>Generic - Netflics</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,7 +17,7 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.jsp">Road Trip <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="index.jsp">Netlics <span>by GSD</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
@@ -33,15 +33,15 @@
 			<footer id="footer">
 				<div class="inner">
 
-					<h2>Contact Me</h2>
+					<h2>Filter</h2>
 
 					<form action="#" method="post">
 											
 						<div class="4u 12u$(small)">
 						<label for="type">Type</label>
-							<input type="radio" id="movies" name="movies" value="movies" >
+							<input type="radio" id="movies" name="type" value="movies" >
 								<label for="movies">Movies</label>
-							<input type="radio" id="tvshows" name="tvshows" value="tvshows" >
+							<input type="radio" id="tvshows" name="type" value="tvshows" >
 								<label for="tvshows">TV Shows</label>
 						</div>
 						<div class="field half">
@@ -65,9 +65,27 @@
 						<div class="field half">
 							<label for="year">Release Year</label>
 							<input type="number" id="year" name="year" placeholder="Year" >
+						</div>
+						<div class="field half">
+							<label for="date">Date added</label>
+							<input type="date" id="date" name="date" placeholder="date" >
+						</div>
+						<div class="4u 12u$(small)">
+						<label for="rating">Rating</label>
+							<input type="radio" id="ma" name="rating" value="MA" >
+								<label for="ma">MA</label>
+							<input type="radio" id="tv14" name="rating" value="TV-14" >
+								<label for="tv14">TV-14</label>
+							<input type="radio" id="pg" name="rating" value="PG" >
+								<label for="pg">PG</label>
+							<input type="radio" id="r" name="rating" value="R" >
+								<label for="r">R</label>
+							<input type="radio" id="other" name="rating" value="Other" >
+								<label for="other">Other</label>
 							
 						</div>
-					<!-- MISSING RATING -->	
+				
+					
 						<div class="field half">
 							<label for="duration">Duration</label>
 							<input name="duration" id="duration" type="text" placeholder="Duration">
@@ -80,19 +98,10 @@
 						
 						
 						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
+							<li><input value="Send" class="button alt" type="submit"></li>
 						</ul>
 					</form>
 
-					<ul class="icons">
-						<li><a href="#" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-
-					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
-					</div>
 
 				</div>
 			</footer>

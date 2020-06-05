@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>Road Trip by TEMPLATED</title>
+		<title>Netflics</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,7 +17,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><a href="index.jsp">Road Trip <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="index.jsp">Netflics <span>by GSD</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
@@ -36,10 +36,12 @@
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-			<section id="banner" class="bg-img" data-bg="banner.jpg">
+			<section id="banner" class="bg-img" data-bg="sipario.jpg">
+			
+			
 				<div class="inner">
 					<header>
-						<h1>This is Road Trip</h1>
+						<h1>Netflics</h1>
 					</header>
 				</div>
 				<a href="#one" class="more">Learn More</a>
