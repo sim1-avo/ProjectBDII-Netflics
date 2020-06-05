@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE HTML>
 <!--
 	Road Trip by TEMPLATED
@@ -15,19 +17,85 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Road Trip <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="index.jsp">Road Trip <span>by TEMPLATED</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
+					<li><a href="index.jsp">Home</a></li>
+					<li><a href="generic.jsp">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
 			</nav>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
 
+					<h2>Contact Me</h2>
+
+					<form action="#" method="post">
+											
+						<div class="4u 12u$(small)">
+						<label for="type">Type</label>
+							<input type="radio" id="movies" name="movies" value="movies" >
+								<label for="movies">Movies</label>
+							<input type="radio" id="tvshows" name="tvshows" value="tvshows" >
+								<label for="tvshows">TV Shows</label>
+						</div>
+						<div class="field half">
+							<label for="title">Title</label>
+							<input name="title" id="title" type="text" placeholder="Title">
+						</div>
+						<div class="field half">
+							<label for="director">Director</label>
+							<input name="director" id="director" type="text" placeholder="Director">
+						</div>
+						<div class="field half">
+							<label for="cast">Cast</label>
+							<input name="cast" id="cast" type="text" placeholder="Cast">
+						</div>
+						<div class="field half">
+							<label for="country">Country</label>
+							<input name="country" id="country" type="text" placeholder="Country">
+						</div>
+						
+						
+						<div class="field half">
+							<label for="year">Release Year</label>
+							<input type="number" id="year" name="year" placeholder="Year" >
+							
+						</div>
+					<!-- MISSING RATING -->	
+						<div class="field half">
+							<label for="duration">Duration</label>
+							<input name="duration" id="duration" type="text" placeholder="Duration">
+						</div>
+						<div class="field half">
+							<label for="category">Category</label>
+							<input name="category" id="category" type="text" placeholder="Category">
+						</div>
+						
+						
+						
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+					<ul class="icons">
+						<li><a href="#" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+
+					<div class="copyright">
+						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+					</div>
+
+				</div>
+			</footer>
 		<!-- Content -->
 		<!--
 			Note: To show a background image, set the "data-bg" attribute below
@@ -62,43 +130,7 @@
 				</div>
 			</section>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
 
-					<h2>Contact Me</h2>
-
-					<form action="#" method="post">
-
-						<div class="field half first">
-							<label for="name">Name</label>
-							<input name="name" id="name" type="text" placeholder="Name">
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input name="email" id="email" type="email" placeholder="Email">
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-						</div>
-						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
-						</ul>
-					</form>
-
-					<ul class="icons">
-						<li><a href="#" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-
-					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
-					</div>
-
-				</div>
-			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

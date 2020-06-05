@@ -16,6 +16,7 @@ public class Connessione {
     this.mongoLogger.setLevel(Level.SEVERE);
     this.mongoClient = new MongoClient("localhost", 27017);
     this.database = mongoClient.getDatabase("ProjectBDII");
+    
     return database;
   }
   

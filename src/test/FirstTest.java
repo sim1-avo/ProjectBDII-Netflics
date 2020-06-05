@@ -17,6 +17,10 @@ public class FirstTest {
 		ArrayList<Film> f_list = new ArrayList();
 		Film f1= new Film();
 		f1.setTitle("Dino Hunt");
+		f1.setType("TV Show");
+		f1.setCountry("Cana");
+		f1.setDate("4");
+		
 		Film f2 = new Film();
 		f2.setTitle("Jandino: Whatever it Takes");
 		f_list.add(f1);
@@ -24,7 +28,7 @@ public class FirstTest {
 		Connessione c = new Connessione();
 		MongoCollection<Document>collection = c.conn().getCollection("Netflix");
 		FilmDAO dao = new FilmDAO();
-		ArrayList<String>results = dao.doRetrieve(f_list, collection);
+		ArrayList<String>results = dao.findBy(f1, collection);
 		for(int i=0;i<results.size();i++) {
 			System.out.println(results.get(i));
 		}

@@ -9,15 +9,37 @@ public class Film {
     String date;
     int release_year;
     String rating;
-    int duration;
+    String duration;
     String listed_in;
     String description;
 
     public Film(){
-
+      this.release_year=0;
     }
+    
+    
+    public Film(String show_id, String type, String title, String director, String cast,
+        String country, String date, int release_year, String rating, String duration,
+        String listed_in, String description) {
+      super();
+      this.show_id = show_id;
+      this.type = type;
+      this.title = title;
+      this.director = director;
+      this.cast = cast;
+      this.country = country;
+      this.date = date;
+      this.release_year = release_year;
+      this.rating = rating;
+      this.duration = duration;
+      this.listed_in = listed_in;
+      this.description = description;
+    }
+
+
     public Film(String show_id) {
         this.show_id = show_id;
+        this.release_year=0;
     }
 
     public String getShow_id() {
@@ -92,11 +114,11 @@ public class Film {
         this.rating = rating;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

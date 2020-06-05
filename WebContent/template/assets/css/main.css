@@ -2243,6 +2243,7 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="number"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -4287,6 +4288,7 @@
 		}
 
 		#footer input[type="text"],
+		#footer input[type="number"],
 		#footer input[type="password"],
 		#footer input[type="email"],
 		#footer select,
@@ -4297,6 +4299,7 @@
 
 			#footer input[type="text"]:focus,
 			#footer input[type="password"]:focus,
+			#footer input[type="number"]:focus,
 			#footer input[type="email"]:focus,
 			#footer select:focus,
 			#footer textarea:focus {
