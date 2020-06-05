@@ -64,7 +64,7 @@
 						
 						<div class="field half">
 							<label for="year">Release Year</label>
-							<input type="number" id="year" name="year" placeholder="Year" >
+							<input type="number" min="1925" id="year" name="year" placeholder="Year" >
 						</div>
 						<div class="field half">
 							<label for="date">Date added</label>
