@@ -1,0 +1,74 @@
+
+.title_card{
+	font-size:40px;
+
+}
+.title_card p{
+		margin-bottom: 1em;
+}
+
+.content{
+	padding: 10px;
+	border-radius: 10px;
+	background: rgba(200,200,200,0.7);
+}
+.box{
+	padding:2em;
+	border-radius:10px;
+	background: rgba(100,100,100,0.9);
+}
+
+.img_card
+
+.result_card, .info_card, .detail_card{
+	display:flex;
+}
+
+.result_card{
+	flex-direction:row;
+}
+
+.detail_card{
+	flex-direction: row;
+	align-self: center;
+	width:100%;
+}
+
+.info_card{
+	width:100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.title_card{
+	width:50%;
+	text-align: center;
+	align-self: center;
+}
+
+.title_card p{
+	border-radius: 10px;
+	background: rgba(255,0,0,1);
+}
+
+.type_card, .year_card, .rating_card{
+	text-align: center;
+	width:45%;
+	margin-left: 10px;
+	background: rgba(255,0,0,1);
+	border-radius: 10px;
+}
+
+.type_card p{
+	width:60%;
+}
+
+.seemore_card img{
+	width:80%;
+	height: auto;
+}
+.seemore_card{
+	display: flex;
+	align-items: center;
+}
