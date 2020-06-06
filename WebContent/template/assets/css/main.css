@@ -392,7 +392,7 @@
 	}
 
 	.\34 u, .\34 u\24 {
-		width: 33.3333333333%;
+		/*width: 33.3333333333%;*/
 		clear: none;
 		margin-left: 0;
 	}
@@ -2244,6 +2244,7 @@
 	input[type="password"],
 	input[type="email"],
 	input[type="number"],
+	input[type="date"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -4289,6 +4290,7 @@
 
 		#footer input[type="text"],
 		#footer input[type="number"],
+		#footer input[type="date"],
 		#footer input[type="password"],
 		#footer input[type="email"],
 		#footer select,
@@ -4300,6 +4302,7 @@
 			#footer input[type="text"]:focus,
 			#footer input[type="password"]:focus,
 			#footer input[type="number"]:focus,
+			#footer input[type="date"]:focus,
 			#footer input[type="email"]:focus,
 			#footer select:focus,
 			#footer textarea:focus {
