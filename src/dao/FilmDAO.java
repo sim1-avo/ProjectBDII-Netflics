@@ -76,11 +76,12 @@ public class FilmDAO {
       return list;
     }
     
-    public ArrayList<String> findBy(Film f, MongoCollection<Document> collection){
+    public ArrayList<Film> findBy(Film f, MongoCollection<Document> collection){
       
       MongoCollection<Document> coll= collection;
       ArrayList<Bson> listBson= new ArrayList<Bson>();
-      ArrayList<String> listaS= new ArrayList<String>();
+      ArrayList<Film> listaFilm= new ArrayList<Film>();
+     // Film f1= new Film();
       if(f.getType()!=null) {
         Bson type= Filters.eq("type", f.getType());
         listBson.add(type);
@@ -106,11 +107,11 @@ public class FilmDAO {
         listBson.add(date);
       }
       if(f.getRelease_year()!=0) {
-        Bson release_year= Filters.eq("release_year", f.getRelease_year());
+        Bson release_year= Filters.eq("release_year", ""+f.getRelease_year());
         listBson.add(release_year);
       }
       if(f.getRating()!=null) {
-        Bson rating= Filters.eq("rating", f.getRating());
+        Bson rating= Filters.regex("rating", f.getRating());
         listBson.add(rating);
       }
       if(f.getDuration()!=null) {
@@ -123,13 +124,25 @@ public class FilmDAO {
       }
       //Iterable<Bson> it= listBson;
       Bson filters= Filters.and(listBson); 
-      MongoCursor<Document> db= coll.find(filters).iterator();
-      while(db.hasNext()) {
-        listaS.add(db.next().toString());
-        
-      }
+      for(Document document : coll.find(filters)){
+        Film f1= new Film(
+            (document.getString("show_id")),
+            (document.getString("type")),
+            (document.getString("title")),
+            (document.getString("director")),
+            (document.getString("cast")),
+            (document.getString("country")),
+            (document.getString("date_added")),
+            (Integer.parseInt(document.getString("release_year"))),
+            (document.getString("rating")),
+            (document.getString("duration")),
+            (document.getString("listed_in")),
+            (document.getString("description"))
+        );
+      listaFilm.add(f1);
+    }
       
-      return listaS;
+      return listaFilm;
       
     }
     

@@ -36,13 +36,13 @@
 
 					<h2>Filter</h2>
 
-					<form action="<%=request.getContextPath()%>/ServletViewMovie" method="post">
+					<form action="<%=request.getContextPath()%>/ServletFilter" method="post">
 											
 						<div class="4u 12u$(small)">
 						<label for="type">Type</label>
-							<input type="radio" id="movies" name="type" value="movies" >
+							<input type="radio" id="movies" name="type" value="Movie" >
 								<label for="movies">Movies</label>
-							<input type="radio" id="tvshows" name="type" value="tvshows" >
+							<input type="radio" id="tvshows" name="type" value="TV Show" >
 								<label for="tvshows">TV Shows</label>
 						</div>
 						<div class="field half">
@@ -105,8 +105,7 @@
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-			<section id="post" class="wrapper bg-img" data-bg="cinema.jpg" style="background-image: url(template/images/cinema.jpg)";
-">
+			<section id="post" class="wrapper bg-img" data-bg="cinema.jpg" style="background-image: url(template/images/cinema.jpg)">
 				<div class="inner">
 					<article class="box">
 						<div class="content">
