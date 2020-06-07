@@ -111,8 +111,20 @@ public class FilmDAO {
         listBson.add(release_year);
       }
       if(f.getRating()!=null) {
-        Bson rating= Filters.regex("rating", f.getRating());
-        listBson.add(rating);
+        Bson rating, rating1, rating2, rating3, rating4=null;
+        
+        if(!f.getRating().equals("Other")) {
+         rating= Filters.regex("rating", f.getRating());
+         listBson.add(rating);
+         
+        }else {
+          listBson.add(Filters.nin("MA", f.getRating()));
+          listBson.add(Filters.nin("TV-14", f.getRating()));
+          listBson.add(Filters.nin("R", f.getRating()));
+          listBson.add(Filters.nin("PG", f.getRating()));
+          listBson.add(Filters.nin("rating", f.getRating()));
+         
+        }
       }
       if(f.getDuration()!=null) {
         Bson duration= Filters.eq("duration", f.getDuration());
