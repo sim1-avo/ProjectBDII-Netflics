@@ -3816,9 +3816,13 @@
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
-
+/*
 		#post .inner {
 			margin: 0 auto;
+		}*/
+		#post .inner {
+    		margin: 0 auto;
+    		width: fit-content;
 		}
 
 		#post .button.icon {

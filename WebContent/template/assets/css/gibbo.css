@@ -3,19 +3,32 @@
 	font-size:40px;
 
 }
+/*
 .title_card p{
 		margin-bottom: 1em;
+}
+*/
+/*
+.title_card p{
+	border-radius: 10px;
+	background: rgba(255,0,0,1);
+}*/
+.title_card p {
+    /* border-radius: 10px; */
+    font-weight: 500;
+    /* background: rgba(255,0,0,1); */
 }
 
 .content{
 	padding: 10px;
 	border-radius: 10px;
-	background: rgba(200,200,200,0.7);
+	background: rgba(246, 71, 71, 0.26);
+	/*background: rgba(200,200,200,0.7);*/
 }
 .box{
 	padding:2em;
 	border-radius:10px;
-	background: rgba(100,100,100,0.9);
+	/*background: rgba(100,100,100,0.9);*/
 }
 
 .img_card
@@ -47,16 +60,13 @@
 	align-self: center;
 }
 
-.title_card p{
-	border-radius: 10px;
-	background: rgba(255,0,0,1);
-}
 
 .type_card, .year_card, .rating_card{
 	text-align: center;
 	width:45%;
 	margin-left: 10px;
-	background: rgba(255,0,0,1);
+	/*background: rgba(255,0,0,1);*/
+	background: #f64747;
 	border-radius: 10px;
 }
 
@@ -71,4 +81,10 @@
 .seemore_card{
 	display: flex;
 	align-items: center;
+}
+
+/*STYLE BY SIM1 - INFO SINGOLO FILM*/
+.titlefilm {
+    text-align: center;
+    font-size: large;
 }

@@ -27,6 +27,54 @@ public class FilmDAO {
         return result_list;
     }
     
+    public Film doRetriveFilm(String id, MongoCollection<Document> collection) {
+      MongoCollection<Document> coll= collection;
+      Bson filters = Filters.eq("show_id", id);
+      Film f1= new Film();
+      for(Document document : coll.find(filters)){
+        f1.setShow_id(document.getString("show_id"));
+        f1.setType(document.getString("type"));
+        f1.setTitle(document.getString("title"));
+        f1.setDirector(document.getString("director"));
+        f1.setCast(document.getString("cast"));
+        f1.setCountry(document.getString("country"));
+        f1.setDate(document.getString("date_added"));
+        f1.setRelease_year(Integer.parseInt(document.getString("release_year")));
+        f1.setRating(document.getString("rating"));
+        f1.setDuration(document.getString("duration"));
+        f1.setListed_in(document.getString("listed_in"));
+        f1.setDescription(document.getString("description"));
+        
+        System.out.println(f1.toString());
+    }
+      
+      return f1;
+    }
+    
+    public ArrayList<Film> doRetriveAll(MongoCollection<Document> collection) {
+      MongoCollection<Document> coll= collection;
+      //Bson filters = Filters.eq("show_id", id);
+      ArrayList<Film> list= new ArrayList<Film>();
+      for(Document document : coll.find()){
+        Film f= new Film(
+            (document.getString("show_id")),
+            (document.getString("type")),
+            (document.getString("title")),
+            (document.getString("director")),
+            (document.getString("cast")),
+            (document.getString("country")),
+            (document.getString("date_added")),
+            (Integer.parseInt(document.getString("release_year"))),
+            (document.getString("rating")),
+            (document.getString("duration")),
+            (document.getString("listed_in")),
+            (document.getString("description"))
+        );
+      list.add(f);
+    }
+      
+      return list;
+    }
     
     public ArrayList<String> findBy(Film f, MongoCollection<Document> collection){
       

@@ -1,5 +1,13 @@
 package model;
 public class Film {
+    @Override
+  public String toString() {
+    return "Film [show_id=" + show_id + ", type=" + type + ", title=" + title + ", director="
+        + director + ", cast=" + cast + ", country=" + country + ", date=" + date
+        + ", release_year=" + release_year + ", rating=" + rating + ", duration=" + duration
+        + ", listed_in=" + listed_in + ", description=" + description + "]";
+  }
+
     String show_id;
     String type;
     String title;

@@ -28,9 +28,12 @@ public class FirstTest {
 		Connessione c = new Connessione();
 		MongoCollection<Document>collection = c.conn().getCollection("Netflix");
 		FilmDAO dao = new FilmDAO();
-		ArrayList<String>results = dao.findBy(f1, collection);
-		for(int i=0;i<results.size();i++) {
-			System.out.println(results.get(i));
+		//ArrayList<String>results = dao.findBy(f1, collection);
+		
+		//Film film= dao.doRetriveFilm("70304989", collection);
+		ArrayList<Film> list= dao.doRetriveAll(collection);
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).toString());
 		}
 		
 	}

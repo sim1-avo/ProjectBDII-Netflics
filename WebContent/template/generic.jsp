@@ -11,21 +11,22 @@
 		<title>Generic - Netflics</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/template/assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/template/assets/css/gibbo.css">
 	</head>
 	<body class="subpage">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.jsp">Netlics <span>by GSD</span></a></div>
+				<div class="logo"><a href="<%=request.getContextPath()%>/template/index.jsp">Netlics <span>by GSD</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.jsp">Home</a></li>
-					<li><a href="generic.jsp">Generic</a></li>
+					<li><a href="<%=request.getContextPath()%>/template/index.jsp">Home</a></li>
+					<li><a href="ServletAllMovies?tutto=si">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
 			</nav>
@@ -35,7 +36,7 @@
 
 					<h2>Filter</h2>
 
-					<form action="#" method="post">
+					<form action="<%=request.getContextPath()%>/ServletViewMovie" method="post">
 											
 						<div class="4u 12u$(small)">
 						<label for="type">Type</label>
@@ -60,8 +61,6 @@
 							<label for="country">Country</label>
 							<input name="country" id="country" type="text" placeholder="Country">
 						</div>
-						
-						
 						<div class="field half">
 							<label for="year">Release Year</label>
 							<input type="number" min="1925" id="year" name="year" placeholder="Year" >
@@ -82,10 +81,7 @@
 								<label for="r">R</label>
 							<input type="radio" id="other" name="rating" value="Other" >
 								<label for="other">Other</label>
-							
 						</div>
-				
-					
 						<div class="field half">
 							<label for="duration">Duration</label>
 							<input name="duration" id="duration" type="text" placeholder="Duration">
@@ -95,10 +91,8 @@
 							<input name="category" id="category" type="text" placeholder="Category">
 						</div>
 						
-						
-						
 						<ul class="actions">
-							<li><input value="Send" class="button alt" type="submit"></li>
+							<li><input value="Send" class="button alt" name="submit" type="submit"></li>
 						</ul>
 					</form>
 
@@ -111,30 +105,15 @@
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+			<section id="post" class="wrapper bg-img" data-bg="cinema.jpg" style="background-image: url(template/images/cinema.jpg)";
+">
 				<div class="inner">
 					<article class="box">
-						<header>
-							<h2>Nibh non lobortis mus nibh</h2>
-							<p>01.01.2017</p>
-						</header>
 						<div class="content">
-							<p>Ac pretium parturient et scelerisque dis pulvinar nascetur suspendisse justo parturient est quis adipiscing nisi dis eu ullamcorper. Penatibus aliquet vestibulum dis pretium a ullamcorper accumsan facilisis elit ullamcorper porttitor dictumst per a a potenti interdum fusce a adipiscing nostra ac parturient. Proin a imperdiet at a scelerisque quam et at ante aenean per per faucibus senectus lobortis mi tincidunt a penatibus. Mauris vestibulum aliquet parturient odio dapibus euismod a mi ullamcorper maecenas turpis non scelerisque nibh fermentum natoque erat parturient suspendisse a magna curabitur cum.</p>
-
-							<p>Aliquet a consectetur semper suscipit ridiculus mattis augue volutpat hendrerit proin hac vel tristique quis amet parturient sem. Adipiscing laoreet blandit vestibulum laoreet fermentum sed sociis lorem class ipsum scelerisque porttitor viverra vestibulum nascetur. Ad felis ad ullamcorper urna iaculis aenean vel a suspendisse nunc placerat euismod suspendisse et fames ipsum elementum odio vestibulum duis. Fringilla condimentum donec tincidunt enim volutpat nam velit quisque laoreet adipiscing nam in suspendisse mattis ad libero parturient scelerisque. Vitae enim ac parturient iaculis pharetra cum quam imperdiet commodo mus netus quam habitasse risus netus dis.</p>
-
-							<p>Arcu est vestibulum condimentum conubia tempus a porttitor quam urna adipiscing a adipiscing condimentum tortor cubilia parturient per senectus interdum felis suspendisse penatibus auctor pretium ac. Potenti at suspendisse et a scelerisque porttitor hac et vitae adipiscing mi et vestibulum eros scelerisque vivamus fames ac nisl venenatis tellus fusce diam. Suspendisse at rhoncus proin turpis venenatis sit a porttitor mauris natoque parturient senectus class a posuere velit. Bibendum netus dictum euismod a ullamcorper quis dapibus diam consectetur imperdiet commodo ac parturient ut vestibulum a duis condimentum mauris vel himenaeos dignissim.</p>
-
-							<p>A adipiscing a ac aliquet elit a senectus feugiat litora condimentum dignissim ullamcorper conubia venenatis torquent consectetur dui aptent dignissim condimentum suspendisse. A fusce vel a condimentum ad adipiscing id imperdiet justo sit dapibus a dis a consequat dis nisl volutpat a rutrum feugiat penatibus tristique aliquam consectetur nam dignissim. Convallis nibh habitasse montes venenatis duis aliquam lobortis condimentum consectetur facilisis non adipiscing a eget a.</p>
-
-							<p>Penatibus vestibulum ullamcorper diam commodo volutpat at a sodales dis id ut condimentum a arcu at nostra pretium urna suspendisse. Maecenas commodo adipiscing ad curabitur a a risus pulvinar habitant a et integer volutpat mi nullam curabitur a adipiscing nullam in bibendum vel cras scelerisque. Morbi a euismod litora dui nunc in pretium sodales ante dis dui natoque adipiscing a. Augue imperdiet dignissim adipiscing justo accumsan adipiscing vestibulum adipiscing fames class ad rutrum sociosqu ad auctor sodales dis mollis. Ac euismod enim ad viverra dui auctor at integer inceptos parturient mi convallis aliquet iaculis ad diam.</p>
+						<%String query=(String)request.getAttribute("query");
+						%>
+						<%=query%>
 						</div>
-						<footer>
-							<ul class="actions">
-								<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li>
-								<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li>
-							</ul>
-						</footer>
 					</article>
 				</div>
 			</section>

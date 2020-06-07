@@ -25,7 +25,7 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.jsp">Home</a></li>
-					<li><a href="generic.jsp">Generic</a></li>
+					<li><a href="<%=request.getContextPath()%>/ServletAllMovies?tutto=si">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
 			</nav>
