@@ -18,6 +18,7 @@ public class FirstTest {
 		Film f1= new Film();
 		
 		f1.setRelease_year(2019);
+		f1.setRating("MA");
 		
 		Film f2 = new Film();
 		f2.setTitle("Jandino: Whatever it Takes");
@@ -27,15 +28,16 @@ public class FirstTest {
 		Connessione c = new Connessione();
 		MongoCollection<Document>collection = c.conn().getCollection("Netflix");
 		FilmDAO dao = new FilmDAO();
-		ArrayList<Film>results = dao.findBy(f1, collection);
+		//ArrayList<Film>results = dao.findBy(f1, collection);
 		
 		//Film film= dao.doRetriveFilm("70304989", collection);
 		//ArrayList<Film> list= dao.doRetriveAll(collection);
-		for(int i=0;i<results.size();i++) {
-			System.out.println(results.get(i).toString());
-		}
+		//for(int i=0;i<results.size();i++) {
+			//System.out.println(results.get(i).toString());
+		//}
 		
-		System.out.println(f1.toString());
+		//System.out.println(f1.toString());
+
 		
 	}
 

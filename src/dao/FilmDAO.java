@@ -19,6 +19,7 @@ public class FilmDAO {
     	MongoCollection<Document> coll = collection;
         Bson filters= Filters.nin("title",f.get(0).getTitle(),f.get(1).getTitle());
     	MongoCursor<Document> bd = coll.find(filters).iterator();
+    	
     	//DBCursor bd = collection.find(new BasicDBObject().append("title", f.getTitle()).append("director", f.getDirector()));
         ArrayList<String> result_list= new ArrayList<String>();
         while(bd.hasNext()){
@@ -158,4 +159,14 @@ public class FilmDAO {
       
     }
     
+    public ArrayList<String> chartRating(ArrayList<String> rate, MongoCollection<Document> collection){
+      
+      ArrayList<String> listcount= new ArrayList<String>();
+      MongoCollection<Document> coll= collection;
+      for(int i=0; i< rate.size();i++) {
+        listcount.add(""+coll.count(Filters.eq("rating", rate.get(i).toString())));
+      }
+      return listcount;
+      
+    }
 }

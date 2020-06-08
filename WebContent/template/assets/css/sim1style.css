@@ -1,0 +1,10 @@
+/*STYLE FOR CHARTS*/
+.chart {
+    /*display: inline-flex;*/
+    float: left;
+}
+.legend {
+    background: radial-gradient(black, transparent);
+    text-align: initial;
+    margin-left: 45%;
+}

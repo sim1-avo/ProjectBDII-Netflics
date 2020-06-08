@@ -27,7 +27,7 @@
 				<ul class="links">
 					<li><a href="<%=request.getContextPath()%>/template/index.jsp">Home</a></li>
 					<li><a href="ServletAllMovies?tutto=si">Movies</a></li>
-					<li><a href="elements.html">Elements</a></li>
+					<li><a href="<%=request.getContextPath()%>/template/Analysis.jsp">Analysis</a></li>
 				</ul>
 			</nav>
 		<!-- Footer -->
