@@ -76,8 +76,13 @@
 
 					var post 	= $(this),
 						bg 		= post.data('bg');
+					
+					if ( bg=="cinema.jpg"){
 
-					post.css( 'background-image', 'url(images/' + bg + ')' );
+					post.css( 'background-image', 'url(template/images/' + bg + ')' );
+					}else{
+						post.css( 'background-image', 'url(images/' + bg + ')' );
+					}
 
 				});
 

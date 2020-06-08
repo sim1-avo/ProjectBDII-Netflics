@@ -25,7 +25,7 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.jsp">Home</a></li>
-					<li><a href="<%=request.getContextPath()%>/ServletAllMovies?tutto=si">Generic</a></li>
+					<li><a href="<%=request.getContextPath()%>/ServletAllMovies?tutto=si">Movies</a></li>
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
 			</nav>
@@ -161,12 +161,12 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="<%=request.getContextPath()%>/template/assets/js/jquery.min.js"></script>
+			<script src="<%=request.getContextPath()%>/template/assets/js/jquery.scrolly.min.js"></script>
+			<script src="<%=request.getContextPath()%>/template/assets/js/jquery.scrollex.min.js"></script>
+			<script src="<%=request.getContextPath()%>/template/assets/js/skel.min.js"></script>
+			<script src="<%=request.getContextPath()%>/template/assets/js/util.js"></script>
+			<script src="<%=request.getContextPath()%>/template/assets/js/main.js"></script>
 
 	</body>
 </html>
