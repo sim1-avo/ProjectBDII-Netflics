@@ -2,10 +2,15 @@ package dao;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-
+import com.mongodb.client.model.Accumulators;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.BsonField;
+import com.mongodb.client.model.Sorts;
+import java.util.Arrays;
 import model.Film;
 
 import java.util.ArrayList;
@@ -132,5 +137,56 @@ public class FilmDAO {
       return listaS;
       
     }
+
+    public ArrayList<Document> doRetrieveGroupByDate(MongoCollection<Document> collection){
+    	MongoCollection<Document> coll= collection;
+        ArrayList<Bson> listBson= new ArrayList<Bson>();
+        ArrayList<Document> listaS= new ArrayList<Document>();
+        List<Bson>filters = Arrays.asList(Aggregates.group("$release_year", Accumulators.sum("total", 1L)), Aggregates.sort(Sorts.ascending("_id")));
+        AggregateIterable<Document> prova = collection.aggregate(filters);
+        System.out.print(prova.iterator());
+        
+        for (Document dbObject : prova)
+        {
+            listaS.add(dbObject);
+        }
+        /*MongoCursor<Document> db= coll.find().iterator();
+        while(db.hasNext()) {
+          listaS.add(db.next().toString());
+            
+          }*/
+          return listaS;
+    }
+    
+    public ArrayList<Document> doRetrieveGroupByFilm(MongoCollection<Document> collection){
+    	MongoCollection<Document> coll= collection;
+        ArrayList<Bson> listBson= new ArrayList<Bson>();
+        ArrayList<Document> listaS= new ArrayList<Document>();
+        List<Bson>filters = Arrays.asList(Aggregates.group("$country", Accumulators.sum("total", 1L)), Aggregates.sort(Sorts.ascending("_id")));
+        AggregateIterable<Document> prova = collection.aggregate(filters);
+        System.out.print(prova.iterator());
+        
+        for (Document dbObject : prova)
+        {
+            listaS.add(dbObject);
+        }
+        /*MongoCursor<Document> db= coll.find().iterator();
+        while(db.hasNext()) {
+          listaS.add(db.next().toString());
+            
+          }*/
+          return listaS;
+    }
+    
+    public ArrayList<String> chartRating(ArrayList<String> rate, MongoCollection<Document> collection){
+        
+        ArrayList<String> listcount= new ArrayList<String>();
+        MongoCollection<Document> coll= collection;
+        for(int i=0; i< rate.size();i++) {
+          listcount.add(""+coll.count(Filters.eq("rating", rate.get(i).toString())));
+        }
+        return listcount;
+        
+      }
     
 }

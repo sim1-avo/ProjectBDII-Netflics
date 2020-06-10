@@ -31,10 +31,12 @@ public class FirstTest {
 		//ArrayList<String>results = dao.findBy(f1, collection);
 		
 		//Film film= dao.doRetriveFilm("70304989", collection);
-		ArrayList<Film> list= dao.doRetriveAll(collection);
+		ArrayList<Document> list= dao.doRetrieveGroupByDate(collection);
 		for(int i=0;i<list.size();i++) {
 			System.out.println(list.get(i).toString());
 		}
+		
+		
 		
 	}
 
