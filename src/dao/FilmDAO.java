@@ -46,7 +46,6 @@ public class FilmDAO {
         f1.setListed_in(document.getString("listed_in"));
         f1.setDescription(document.getString("description"));
         
-        System.out.println(f1.toString());
     }
       
       return f1;
@@ -56,7 +55,7 @@ public class FilmDAO {
       MongoCollection<Document> coll= collection;
       //Bson filters = Filters.eq("show_id", id);
       ArrayList<Film> list= new ArrayList<Film>();
-      for(Document document : coll.find()){
+      for(Document document : coll.find().limit(50)){
         Film f= new Film(
             (document.getString("show_id")),
             (document.getString("type")),
@@ -164,7 +163,7 @@ public class FilmDAO {
       ArrayList<String> listcount= new ArrayList<String>();
       MongoCollection<Document> coll= collection;
       for(int i=0; i< rate.size();i++) {
-        listcount.add(""+coll.count(Filters.eq("rating", rate.get(i).toString())));
+        listcount.add(""+coll.count(Filters.regex("rating", rate.get(i).toString())));
       }
       return listcount;
       

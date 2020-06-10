@@ -42,7 +42,7 @@
 			
 
 		<!-- One -->
-			<section id="one" class="wrapper post bg-img" data-bg="banner2.jpg">
+			<section id="one" class="wrapper post bg-img" data-bg="public.jpg">
 				<div class="inner">
 					<article class="box">
 						<header>

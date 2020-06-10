@@ -54,7 +54,7 @@ public class ServletAllMovies extends HttpServlet {
       
 	  if(tutto!=null) {
 	    ArrayList<Film> list= dao.doRetriveAll(collection);
-	      for(int i=0;i<50;i++) {
+	      for(int i=0;i<=list.size();i++) {
 	          query+="<div class=\"result_card\" style=\"display:flex\">\r\n" + 
 	              "                                <div class=\"img_card\">\r\n" + 
 	              "                                    <img src=\"template/images/movies-icon-128.png\">\r\n" + 

@@ -50,8 +50,6 @@ $(document).ready(function() {
 						});
 						myChart.canvas.parentNode.style.height = 'auto';
 						myChart.canvas.parentNode.style.width = '30vw';
-						
-	
 					}
 
 				},

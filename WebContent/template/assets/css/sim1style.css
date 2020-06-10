@@ -1,10 +1,14 @@
 /*STYLE FOR CHARTS*/
 .chart {
     /*display: inline-flex;*/
-    float: left;
 }
 .legend {
-    background: radial-gradient(black, transparent);
     text-align: initial;
-    margin-left: 45%;
+    font-size: smaller;
+    margin-left: 7%;
+    height: min-content;
+    background: radial-gradient(black, transparent);
+}
+.content {
+    display: flex;
 }
