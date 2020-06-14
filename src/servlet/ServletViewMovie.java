@@ -51,9 +51,9 @@ public class ServletViewMovie extends HttpServlet {
       MongoCollection<Document>collection = c.conn().getCollection("Netflix");
       FilmDAO dao = new FilmDAO();
 	  if(showid!=null) {
-
+	      String vedi="<div class='content' style='height:auto'>";
 	      Film film= dao.doRetriveFilm(showid, collection); 
-	      String vedi="<div class='titlefilm'>";
+	      vedi+="<div class='titlefilm'>";
 	      vedi+= "<b>"+film.getTitle()+"</b>"
 	          + "<br>"+film.getType() +" &#183; "+ film.getRelease_year()+" &#183; "+film.getDuration();
 	      vedi+="</div>";
@@ -85,6 +85,7 @@ public class ServletViewMovie extends HttpServlet {
           vedi+="<div class='infofilm'>";
           vedi+= "<b>Date:</b> "+film.getDate() 
               + "<br>"+ "<b>Rating:</b> " +film.getRating() + "<br>";
+          vedi+="</div>";
           vedi+="</div>";
 	      
 	      request.setAttribute("query", vedi);

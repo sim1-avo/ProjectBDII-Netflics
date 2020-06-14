@@ -21,14 +21,14 @@ import dao.FilmDAO;
 /**
  * Servlet implementation class ServletES
  */
-@WebServlet("/ServletES")
-public class ServletRating extends HttpServlet {
+@WebServlet("/ServletYear")
+public class ServletYear extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletRating() {
+    public ServletYear() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -56,7 +56,7 @@ public class ServletRating extends HttpServlet {
 	      Connessione c = new Connessione();
           MongoCollection<Document>collection = c.conn().getCollection("Netflix");
           FilmDAO dao = new FilmDAO();
-          doc=dao.doRetrieveGroupByResearch(collection, "rating");
+          doc=dao.doRetrieveGroupByResearch(collection, "release_year");
           for(int i=1; i<doc.size(); i++) {
             rate.add(doc.get(i).getString("_id"));
             count.add(""+doc.get(i).get("total"));

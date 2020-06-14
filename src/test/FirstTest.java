@@ -26,11 +26,17 @@ public class FirstTest {
 		f_list.add(f2);
 		
 		Connessione c = new Connessione();
-		MongoCollection<Document>collection = c.conn().getCollection("Netflix");
+		MongoCollection<Document> collection = c.conn().getCollection("Netflix");
 		FilmDAO dao = new FilmDAO();
 		//ArrayList<Film>results = dao.findBy(f1, collection);
+		ArrayList<String> as= new ArrayList<String>();
+		as.add("Argentina");
+		as.add("Israel");
 		
-		//Film film= dao.doRetriveFilm("70304989", collection);
+		ArrayList<Document> film= dao.doRetrieveCount(collection,"country", as);
+		for(Document d: film) {
+		  System.out.println(d.toString());
+		}
 		//ArrayList<Film> list= dao.doRetriveAll(collection);
 		//for(int i=0;i<results.size();i++) {
 			//System.out.println(results.get(i).toString());

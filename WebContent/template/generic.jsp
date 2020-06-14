@@ -108,11 +108,9 @@
 			<section id="post" class="wrapper bg-img" data-bg="cinema.jpg">
 				<div class="inner">
 					<article class="box">
-						<div class="content">
 						<%String query=(String)request.getAttribute("query");
 						%>
 						<%=query%>
-						</div>
 					</article>
 				</div>
 			</section>

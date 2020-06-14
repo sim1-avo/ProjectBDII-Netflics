@@ -12,3 +12,21 @@
 .content {
     display: flex;
 }
+#formCountry{
+	/*display: flex*/
+}
+.addcountry {
+    display: inline-block;
+}
+#chartYear {
+    margin-left: 20%;
+}
+#contentC{
+	display:block;
+}
+input#country1, input#country{
+    margin-right: 4px;
+}
+div#countries {
+    display: flex;
+}

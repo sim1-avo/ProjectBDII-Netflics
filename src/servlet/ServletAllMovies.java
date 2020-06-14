@@ -54,7 +54,9 @@ public class ServletAllMovies extends HttpServlet {
       
 	  if(tutto!=null) {
 	    ArrayList<Film> list= dao.doRetriveAll(collection);
-	      for(int i=0;i<=list.size();i++) {
+	    query+="<div class='content'>";
+	      for(int i=0; i<list.size();i++) {
+	        
 	          query+="<div class=\"result_card\" style=\"display:flex\">\r\n" + 
 	              "                                <div class=\"img_card\">\r\n" + 
 	              "                                    <img src=\"template/images/movies-icon-128.png\">\r\n" + 
@@ -80,7 +82,9 @@ public class ServletAllMovies extends HttpServlet {
 	              "                                    <img src=\"template/images/show.png\"> </a>\r\n" + 
 	              "                                </div>\r\n" + 
 	              "   </div> <hr>";
+	          
 	      }
+	      query+="</div>";
 	      request.setAttribute("query", query);
           RequestDispatcher requestDisp;
           requestDisp= request.getRequestDispatcher("template/generic.jsp");

@@ -47,7 +47,7 @@
 					<article class="box">
 						<header>
 							<h2>Which audience is Netflics suitable for?</h2>
-							<p>Discovered it with us</p>
+							<p>Discover it with us</p>
 						</header>
 						<div class="content">
 						<div class="chart">
@@ -56,13 +56,14 @@
 						</div>
 						<div class="legend">
 						<ul>
-						<li>TV-PG= TV parental guidelines.</li>
-						<li>TV-Y= Appropriate for children of all ages.</li>
-						<li>TV-Y7= Appropriate for children age 7 and older.</li>
-						<li>TV-Y14= Appropriate for children age 14 and older.</li>
-						<li>TV-G= Appropriate for all ages.</li>
-						<li>TV-MA= Appropriate for children age 17 and older and adults.</li>
-						<li>TV-Y7-FV= Fantasy violence (only for children age 7 and older).</li>
+						<li>PG-13 = Inappropriate for children 13 and under</li>
+						<li>TV-PG = TV parental guidelines.</li>
+						<li>TV-Y = Appropriate for children of all ages.</li>
+						<li>TV-Y7 = Appropriate for children age 7 and older.</li>
+						<li>TV-Y14 = Appropriate for children age 14 and older.</li>
+						<li>TV-G = Appropriate for all ages.</li>
+						<li>TV-MA = Appropriate for children age 17 and older and adults.</li>
+						<li>TV-Y7-FV = Fantasy violence (only for children age 7 and older).</li>
 						</ul>
 						</div>
 						
@@ -73,38 +74,53 @@
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="wrapper post bg-img" data-bg="banner5.jpg">
+			<section id="two" class="wrapper post bg-img" data-bg="road.jpg">
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>Mus elit a ultricies at</h2>
-							<p>12.21.2016</p>
+							<h2>How many movies per year?</h2>
+							<p>Discover it with us</p>
 						</header>
 						<div class="content">
-							<p>Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
+							<div class="chart" id="chartYear">
+							<canvas id="myChart2" width="200px" height="200px"></canvas>
+							<script language="JavaScript" type="text/javascript" src="chartYear.js"></script>
+							</div>
 						</div>
-						<footer>
-							<a href="generic.jsp" class="button alt">Learn More</a>
-						</footer>
 					</article>
 				</div>
 				<a href="#three" class="more">Learn More</a>
 			</section>
 
 		<!-- Three -->
-			<section id="three" class="wrapper post bg-img" data-bg="banner4.jpg">
+			<section id="three" class="wrapper post bg-img" data-bg="world.jpg">
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>Varius a cursus aliquet</h2>
-							<p>11.11.2016</p>
+							<h2>How many movies per country?</h2>
+							<p>Discover it with us</p>
 						</header>
-						<div class="content">
-							<p>Scelerisque enim mi curae erat ultricies lobortis donec velit in per cum consectetur purus a enim platea vestibulum lacinia et elit ante scelerisque vestibulum. At urna condimentum sed vulputate a duis in senectus ullamcorper lacus cubilia consectetur odio proin sociosqu a parturient nam ac blandit praesent aptent. Eros dignissim mus mauris a natoque ad suspendisse nulla a urna in tincidunt tristique enim arcu litora scelerisque eros suspendisse.</p>
+						<div class="content" id="contentC">
+							
+							
+							<div class="addcountry">
+							<form id="formCountry">
+							<div id="countries">
+							<input type="text" id="country" class="country" required>
+							</div>
+							<div id="ok">
+							<button type="button"  id="new">new</button>
+							<button type="submit" id="submit">Search</button>
+							</div>
+							</form>
+							</div>
+							
+							<div class="chart" id="chartYear">
+							<canvas id="myChart3" width="200px" height="200px"></canvas>
+							<script language="JavaScript" type="text/javascript" src="chartcountry.js"></script>
+							</div>	
+												
 						</div>
-						<footer>
-							<a href="generic.jsp" class="button alt">Learn More</a>
-						</footer>
 					</article>
 				</div>
 				<a href="#four" class="more">Learn More</a>

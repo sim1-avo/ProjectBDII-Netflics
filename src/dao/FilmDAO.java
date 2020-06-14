@@ -2,13 +2,19 @@ package dao;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Accumulators;
+import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Projections;
+import com.mongodb.client.model.Sorts;
 
 import model.Film;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.bson.Document;
@@ -158,14 +164,45 @@ public class FilmDAO {
       
     }
     
-    public ArrayList<String> chartRating(ArrayList<String> rate, MongoCollection<Document> collection){
-      
-      ArrayList<String> listcount= new ArrayList<String>();
+    public ArrayList<Document> doRetrieveGroupByResearch(MongoCollection<Document> collection, String first_parameter){
       MongoCollection<Document> coll= collection;
-      for(int i=0; i< rate.size();i++) {
-        listcount.add(""+coll.count(Filters.regex("rating", rate.get(i).toString())));
-      }
-      return listcount;
+      ArrayList<Bson> listBson= new ArrayList<Bson>();
+      ArrayList<Document> listaS= new ArrayList<Document>();
+      List<Bson>filters = Arrays.asList(Aggregates.group("$"+first_parameter, Accumulators.sum("total", 1L)), Aggregates.sort(Sorts.ascending("_id")));
+      AggregateIterable<Document> prova = collection.aggregate(filters);
+      System.out.print(prova.iterator());
       
-    }
+      for (Document dbObject : prova)
+      {
+          listaS.add(dbObject);
+      }
+      /*MongoCursor<Document> db= coll.find().iterator();
+      while(db.hasNext()) {
+        listaS.add(db.next().toString());
+          
+        }*/
+        return listaS;
+  }
+    public ArrayList<Document> doRetrieveCount(MongoCollection<Document> collection, String first_parameter, ArrayList<String> country){
+      MongoCollection<Document> coll= collection;
+      ArrayList<Bson> listBson= new ArrayList<Bson>();
+      ArrayList<Document> listaS= new ArrayList<Document>();
+      for(String s: country) {
+        List<Bson>filters = Arrays.asList(Aggregates.match(Filters.regex(first_parameter, s)),Aggregates.count(first_parameter));
+        AggregateIterable<Document> prova = collection.aggregate(filters);
+        
+        for (Document dbObject : prova)
+        {
+            listaS.add(dbObject);
+        }
+      }
+      
+      /*MongoCursor<Document> db= coll.find().iterator();
+      while(db.hasNext()) {
+        listaS.add(db.next().toString());
+          
+        }*/
+        return listaS;
+  } 
+
 }
