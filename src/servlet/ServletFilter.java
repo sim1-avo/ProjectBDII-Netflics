@@ -109,19 +109,19 @@ public class ServletFilter extends HttpServlet {
 		
 		f.setType(type);
 		
-		if(title.length()>=2) {
+		if(title.length()>=1) {
 		  f.setTitle(title);
 		}
-		if(director.length()>=2) {
+		if(director.length()>=1) {
 		  f.setDirector(director);
 		}
-		if(cast.length()>=2) {
+		if(cast.length()>=1) {
 		  f.setCast(cast);
 		}
-		if(country.length()>=2) {
+		if(country.length()>=1) {
 		  f.setCountry(country);
 		}
-		if(dateadded.length()>=2) {
+		if(dateadded.length()>=1) {
 		  f.setDate(dateadded);
 		}
 		if(year!=0) {
@@ -130,10 +130,10 @@ public class ServletFilter extends HttpServlet {
 
 		  f.setRating(rating);
 		
-		if(duration.length()>=2) {
+		if(duration.length()>=1) {
 		  f.setDuration(duration);
 		}
-		if(category.length()>=2) {
+		if(category.length()>=1) {
 		  f.setListed_in(category);
 		}
 		

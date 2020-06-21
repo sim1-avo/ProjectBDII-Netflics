@@ -93,19 +93,19 @@ public class FilmDAO {
         listBson.add(type);
       }
       if(f.getTitle()!=null) {
-        Bson title= Filters.regex("title", f.getTitle());
+        Bson title= Filters.regex("title", f.getTitle(),"i");
         listBson.add(title);
       }
       if(f.getDirector()!=null) {
-        Bson director= Filters.regex("director", f.getDirector());
+        Bson director= Filters.regex("director", f.getDirector(),"i");
         listBson.add(director);
       }
       if(f.getCast()!=null) {
-        Bson cast = Filters.regex("cast", f.getCast());
+        Bson cast = Filters.regex("cast", f.getCast(),"i");
         listBson.add(cast);
       }
       if(f.getCountry()!=null) {
-        Bson country= Filters.regex("country", f.getCountry());
+        Bson country= Filters.regex("country", f.getCountry(),"i");
         listBson.add(country);
       }
       if(f.getDate()!=null) {
@@ -120,7 +120,7 @@ public class FilmDAO {
         Bson rating, rating1, rating2, rating3, rating4=null;
         
         if(!f.getRating().equals("Other")) {
-         rating= Filters.regex("rating", f.getRating());
+         rating= Filters.regex("rating", f.getRating(),"i");
          listBson.add(rating);
          
         }else {
@@ -133,34 +133,39 @@ public class FilmDAO {
         }
       }
       if(f.getDuration()!=null) {
-        Bson duration= Filters.eq("duration", f.getDuration());
+        Bson duration= Filters.regex("duration", f.getDuration(),"i");
         listBson.add(duration);
       }
       if(f.getListed_in()!=null) {
-        Bson listed_in= Filters.regex("listed_in", f.getListed_in());
+        Bson listed_in= Filters.regex("listed_in", f.getListed_in(),"i");
         listBson.add(listed_in);
       }
       //Iterable<Bson> it= listBson;
-      Bson filters= Filters.and(listBson); 
-      for(Document document : coll.find(filters)){
-        Film f1= new Film(
-            (document.getString("show_id")),
-            (document.getString("type")),
-            (document.getString("title")),
-            (document.getString("director")),
-            (document.getString("cast")),
-            (document.getString("country")),
-            (document.getString("date_added")),
-            (Integer.parseInt(document.getString("release_year"))),
-            (document.getString("rating")),
-            (document.getString("duration")),
-            (document.getString("listed_in")),
-            (document.getString("description"))
-        );
-      listaFilm.add(f1);
-    }
+      if(listBson.size()>0) {
+    	  Bson filters= Filters.and(listBson); 
+    	  for(Document document : coll.find(filters).limit(50)){
+    		  Film f1= new Film(
+    				  (document.getString("show_id")),
+    				  (document.getString("type")),
+    				  (document.getString("title")),
+    				  (document.getString("director")),
+    				  (document.getString("cast")),
+    				  (document.getString("country")),
+    				  (document.getString("date_added")),
+    				  (Integer.parseInt(document.getString("release_year"))),
+    				  (document.getString("rating")),
+    				  (document.getString("duration")),
+    				  (document.getString("listed_in")),
+    				  (document.getString("description"))
+    				  );
+    		  listaFilm.add(f1);
+    	  }
+    	  return listaFilm;
+      }else {
+    	  return doRetriveAll(coll);
+      }
       
-      return listaFilm;
+    	  
       
     }
     
@@ -188,7 +193,7 @@ public class FilmDAO {
       ArrayList<Bson> listBson= new ArrayList<Bson>();
       ArrayList<Document> listaS= new ArrayList<Document>();
       for(String s: country) {
-        List<Bson>filters = Arrays.asList(Aggregates.match(Filters.regex(first_parameter, s)),Aggregates.count(first_parameter));
+        List<Bson>filters = Arrays.asList(Aggregates.match(Filters.regex(first_parameter, s,"i")),Aggregates.count(first_parameter));
         AggregateIterable<Document> prova = collection.aggregate(filters);
         
         for (Document dbObject : prova)

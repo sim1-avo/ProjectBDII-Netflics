@@ -18,7 +18,7 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="<%=request.getContextPath()%>/template/index.jsp">Netlics <span>by GSD</span></a></div>
+				<div class="logo"><a href="<%=request.getContextPath()%>/template/index.jsp">Netflics <span>by GSD</span></a></div>
 				<a href="#menu"><span>Menu</span></a>
 			</header>
 
