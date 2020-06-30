@@ -8,6 +8,7 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Accumulators;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Indexes;
 import com.mongodb.client.model.Projections;
 import com.mongodb.client.model.Sorts;
 
@@ -20,13 +21,23 @@ import java.util.List;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 public class FilmDAO {
+  
+  public void CreateIndex(MongoCollection<Document> collection, String name, int order) {
+    MongoCollection<Document> coll= collection;
+    if(order==1) {
+    coll.createIndex(Indexes.ascending(name));
+    }else{
+      coll.createIndex(Indexes.descending(name));
+      
+    }
+  }
 
     public ArrayList<String> doRetrieve(List<Film> f, MongoCollection<Document> collection){
-    	MongoCollection<Document> coll = collection;
+        MongoCollection<Document> coll = collection;
         Bson filters= Filters.nin("title",f.get(0).getTitle(),f.get(1).getTitle());
-    	MongoCursor<Document> bd = coll.find(filters).iterator();
-    	
-    	//DBCursor bd = collection.find(new BasicDBObject().append("title", f.getTitle()).append("director", f.getDirector()));
+        MongoCursor<Document> bd = coll.find(filters).iterator();
+        
+        //DBCursor bd = collection.find(new BasicDBObject().append("title", f.getTitle()).append("director", f.getDirector()));
         ArrayList<String> result_list= new ArrayList<String>();
         while(bd.hasNext()){
             result_list.add(bd.next().toString());
@@ -59,7 +70,6 @@ public class FilmDAO {
     
     public ArrayList<Film> doRetriveAll(MongoCollection<Document> collection) {
       MongoCollection<Document> coll= collection;
-      //Bson filters = Filters.eq("show_id", id);
       ArrayList<Film> list= new ArrayList<Film>();
       for(Document document : coll.find().limit(50)){
         Film f= new Film(
@@ -87,7 +97,6 @@ public class FilmDAO {
       MongoCollection<Document> coll= collection;
       ArrayList<Bson> listBson= new ArrayList<Bson>();
       ArrayList<Film> listaFilm= new ArrayList<Film>();
-     // Film f1= new Film();
       if(f.getType()!=null) {
         Bson type= Filters.eq("type", f.getType());
         listBson.add(type);
@@ -142,30 +151,30 @@ public class FilmDAO {
       }
       //Iterable<Bson> it= listBson;
       if(listBson.size()>0) {
-    	  Bson filters= Filters.and(listBson); 
-    	  for(Document document : coll.find(filters).limit(50)){
-    		  Film f1= new Film(
-    				  (document.getString("show_id")),
-    				  (document.getString("type")),
-    				  (document.getString("title")),
-    				  (document.getString("director")),
-    				  (document.getString("cast")),
-    				  (document.getString("country")),
-    				  (document.getString("date_added")),
-    				  (Integer.parseInt(document.getString("release_year"))),
-    				  (document.getString("rating")),
-    				  (document.getString("duration")),
-    				  (document.getString("listed_in")),
-    				  (document.getString("description"))
-    				  );
-    		  listaFilm.add(f1);
-    	  }
-    	  return listaFilm;
+          Bson filters= Filters.and(listBson); 
+          for(Document document : coll.find(filters).limit(50)){
+              Film f1= new Film(
+                      (document.getString("show_id")),
+                      (document.getString("type")),
+                      (document.getString("title")),
+                      (document.getString("director")),
+                      (document.getString("cast")),
+                      (document.getString("country")),
+                      (document.getString("date_added")),
+                      (Integer.parseInt(document.getString("release_year"))),
+                      (document.getString("rating")),
+                      (document.getString("duration")),
+                      (document.getString("listed_in")),
+                      (document.getString("description"))
+                      );
+              listaFilm.add(f1);
+          }
+          return listaFilm;
       }else {
-    	  return doRetriveAll(coll);
+          return doRetriveAll(coll);
       }
       
-    	  
+          
       
     }
     
@@ -202,11 +211,6 @@ public class FilmDAO {
         }
       }
       
-      /*MongoCursor<Document> db= coll.find().iterator();
-      while(db.hasNext()) {
-        listaS.add(db.next().toString());
-          
-        }*/
         return listaS;
   } 
 
